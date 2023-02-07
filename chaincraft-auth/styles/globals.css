@@ -1,0 +1,77 @@
+body {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"> <circle cx="50" cy="50" r="45" fill="whitesmoke"/> </svg>');
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.signin-form {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 6px whitesmoke;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+input[type='email'],
+input[type='password'] {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 32px;
+  border: none;
+  background-color: whitesmoke;
+}
+
+input[type='submit'] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: purple;
+  border: none;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px purple;
+  height: 55px;
+  margin-bottom: 20px;
+  font-size: x-large;
+  font-weight: 600;
+  text-align: center;
+}
+
+span {
+  color: purple;
+  cursor: pointer;
+}
+
+hr {
+  margin: 20px;
+  color: whitesmoke !important;
+}
+
+#center-box {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+.message {
+  background-color: lightblue;
+  border: 1px solid purple;
+  padding: 20px;
+  width: 300px;
+}
