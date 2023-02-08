@@ -50,15 +50,16 @@ const LoginPage = () => {
           </Text>
           <br />
           <Heading variant={'h4'} fontSize="xs">
-            Don't have a chaincraft account?{' '}
+            Don&apos;t have a chaincraft account?{' '}
             <span>
-
-
-
-              <a href="#" style={{
-                color: "purple"
-          
-              }}>Sign Up</a>
+              <a
+                href="#"
+                style={{
+                  color: 'purple',
+                }}
+              >
+                Sign Up
+              </a>
             </span>
           </Heading>
           <br />
