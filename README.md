@@ -1,23 +1,27 @@
 ![logo]()
 
-# Chaincraft:
+# Chaincraft: Empowering Creators in the NFT World
 
 [See Medium Article]()
 
-Chaincraft is a node project that allows for the creation and updating of Non-Fungible Tokens (NFTs) on the Algorand blockchain. With its web-based interface and CLI, both non-developers and developers can easily create assets and interact with the Algorand network.
+The Chaincraft project was created for the Greenhouse Hackathon 3 **with the goal of making it easier for new developers and non-developers** to interact with Non-Fungible Tokens (NFTs).
+
+`This project aims to provide a solution that would allow anyone to bring their creative ideas to life on the algorand blockchain`.
+
+With a powerful `web-based interface` and `CLI`, Chaincraft delivers on that promise. So whether you're a seasoned developer or a curious creator, Chaincraft offers you the tools you need to create and update unique and collectible NFTs on the Algorand blockchain.
 
 ## Chaincraft Web
 
-The Chaincraft web allows non-developers to create assets through a dashboard, simply by signing into their Chaincraft wallet (powered by Morty wallet). The user-friendly interface makes it easy for anyone to create NFTs on the Algorand blockchain.
+The Chaincraft web allows non-developers to create assets on a dashboard, simply by signing into their Chaincraft wallet (powered by Morty wallet). The user-friendly interface makes it easy for anyone to create NFTs on the Algorand blockchain.
 
 [See instructions for Web]()
 
 ## Chaincraft CLI
 
-For developers, Chaincraft offers a command line tool with a colored interface. This tool, known as the Chaincraft CLI, allows for the creation and updating of Algorand assets from the terminal. The CLI provides a powerful and efficient way for developers to interact with the Algorand network.
+For developers, Chaincraft offers a command line tool with a colored interface. This tool, known as the Chaincraft CLI, allows for the creation and updating of Algorand assets from the terminal. The CLI provides a potentially powerful and efficient way for developers to interact with the Algorand network.
 
 <!-- ![preview](./chaincraft-CLI/screenshots/test.gif) -->
-<img src="https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/test.gif" width="500" height="auto">
+<img src="https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/test.gif" width="320" height="180">
 
 [See more for CLI]()
 
