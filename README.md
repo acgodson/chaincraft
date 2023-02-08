@@ -10,13 +10,14 @@ Chaincraft is a node project that allows for the creation and updating of Non-Fu
 
 The Chaincraft web allows non-developers to create assets through a dashboard, simply by signing into their Chaincraft wallet (powered by Morty wallet). The user-friendly interface makes it easy for anyone to create NFTs on the Algorand blockchain.
 
-[See more for Web]()
+[See instructions for Web]()
 
 ## Chaincraft CLI
 
 For developers, Chaincraft offers a command line tool with a colored interface. This tool, known as the Chaincraft CLI, allows for the creation and updating of Algorand assets from the terminal. The CLI provides a powerful and efficient way for developers to interact with the Algorand network.
 
-![preview](./chaincraft-CLI/screenshots/test.gif)
+<!-- ![preview](./chaincraft-CLI/screenshots/test.gif) -->
+<img src="https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/test.gif" width="300" height="300">
 
 [See more for CLI]()
 
