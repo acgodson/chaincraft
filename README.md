@@ -17,7 +17,7 @@ The Chaincraft web allows non-developers to create assets through a dashboard, s
 For developers, Chaincraft offers a command line tool with a colored interface. This tool, known as the Chaincraft CLI, allows for the creation and updating of Algorand assets from the terminal. The CLI provides a powerful and efficient way for developers to interact with the Algorand network.
 
 <!-- ![preview](./chaincraft-CLI/screenshots/test.gif) -->
-<img src="https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/test.gif" width="300" height="300">
+<img src="https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/test.gif" width="500" height="auto">
 
 [See more for CLI]()
 
