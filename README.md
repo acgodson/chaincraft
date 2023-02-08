@@ -1,4 +1,3 @@
-<!-- ![preview](./chaincraft-CLI/screenshots/test.gif) -->
 <img src="https://github.com/acgodson/mortywallet/blob/main/public/algo.svg" width="auto" height="45">
 
 # Chaincraft: Empowering Creators in the NFT World
