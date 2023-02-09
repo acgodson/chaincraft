@@ -92,5 +92,5 @@ chaincraft create-asset --type "pure nft" --name "bluesky" --description "my alb
 
 ```
 
-![log1](./chaincraft-CLI/screenshots/log1.png)
-![log2](./chaincraft-CLI/screenshots/log2.png)
+![log1](/screenshots/log1.png)
+![log2](/screenshots/log2.png)
