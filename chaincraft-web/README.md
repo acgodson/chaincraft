@@ -39,3 +39,9 @@ Chaincraft Web is open source and was released as a submission for the Greenhous
 ## Contributing
 
 If you're interested in contributing to Chaincraft Web, feel free to fork the repository and submit a pull request. Your contribution is greatly appreciated!
+
+## Links
+
+- [Medium]()
+- [Website](https://asset-chaincraft-algo.web.app)
+- [Youtube](https://youtu.be/i2E8fnoTjg8)

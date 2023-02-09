@@ -41,10 +41,11 @@ Please note that the first version of Chaincraft is built to support media or NF
 ### Links
 
 - [Medium]()
-- [Website](https://asset.chaincraft-algo.web.app)
+- [Website](https://asset-chaincraft-algo.web.app)
 - [Youtube](https://youtu.be/i2E8fnoTjg8)
 
 ### References
+
 - [AlgoSDK - Javascript]()
 - [Algorand Foundation- ASA]()
 - [PureStack API]()
