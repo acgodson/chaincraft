@@ -50,7 +50,7 @@ unit and asset name is derieved from valuechoose to "pure nft" or "fractional"
                          [string] [required] [choices: "pure nft", "fractional"]
 
   -n, --name         Used to derieve asset and unit name for NFT Asset                   [string] [required]
-                                                             
+
 
   -d, --description  Description for NFT metadata                                        [string]
   -m, --manager      Address permitted to anage asset configuration                      [string]
@@ -66,6 +66,9 @@ create-asset  [type] [name]  [description] [manager]
 
 destroy [asset-id]
     destroy an Algorand asset
+
+freeze-asset [asset-id]   Freeze or Unfreeze asset on Algorand Blockchain
+reauth         Sign in to your chaincraft wallet and overide any existing stored keys
 
 ```
 
