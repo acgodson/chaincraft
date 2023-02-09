@@ -49,12 +49,12 @@ unit and asset name is derieved from valuechoose to "pure nft" or "fractional"
   -t, --type         choose to "pure nft" or "fractional"
                          [string] [required] [choices: "pure nft", "fractional"]
 
-  -n, --name         Used to derieve asset and unit name for NFT Asset                   [string] [required]
+  -n, --name         Used to derieve unit and asset name, < 8 character length           [string] [required]
 
 
   -d, --description  Description for NFT metadata                                        [string]
   -m, --manager      Address permitted to anage asset configuration                      [string]
-  -f, --freezer       Address permitted freeze and unfreeze assets                       [string]
+  -f, --freezer      Address permitted freeze and unfreeze assets                       [string]
 
 ```
 
