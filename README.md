@@ -30,7 +30,7 @@ The Chaincraft web allows non-developers to create assets on a dashboard, simply
 
 ## Support for ARC3 and ARC69
 
-Chaincraft supports both ARC3 and ARC69 asset standards in Algorand. The ARC3 asset URL leads to the metadata, which is pinned on IPFS, while the ARC69 assets URL leads to the media file, also pinned on IPFS. The ARC69 standard contains a manager's address, which allows for mutability of asset standards in Algorand.
+Chaincraft supports both ARC3 and ARC69 asset standards in Algorand. The ARC3 asset URL leads to the metadata, which is pinned on IPFS, while the ARC69 assets URL leads to the media file, also pinned on IPFS. The ARC69 standard contains a manager's address, which allows for mutability of asset configurations.
 
 [Read more]()
 
