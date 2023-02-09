@@ -102,3 +102,28 @@ chaincraft create-asset --type "pure nft" --name "bluesky" --description "my alb
 
 ![log1](https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/log1.png)
 ![log2](https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/log2.png)
+
+Destroy Asset (asset-id)
+
+```bash
+
+chaincraft destroy-asset 157787208
+
+# {
+# Asset destroyed
+# 'confirmed-round': 27611290,
+# ...
+
+# txn: {
+#     caid: 157787208, 
+#     fee: 1000, 
+#     fv: 27611287, 
+#     gen: 'testnet-v1.0' 
+#     gh: [Uint8Array], 
+#     1v: 27612287, 
+#     snd: [Uint8Array], 
+#     type: 'acfg'
+
+```
+
+![log2](https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/dst.png)
