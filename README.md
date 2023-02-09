@@ -18,7 +18,7 @@ For developers, Chaincraft offers a command line tool with a colored interface. 
 <!-- ![preview](./chaincraft-CLI/screenshots/test.gif) -->
 <img src="https://github.com/acgodson/chaincraft/blob/main/chaincraft-CLI/screenshots/test.gif" width="320" height="180">
 
-[See instructions for CLI]()
+[See instructions for CLI](https://github.com/acgodson/chaincraft/tree/main/chaincraft-CLI)
 
 ## Chaincraft Web
 
@@ -26,7 +26,7 @@ The Chaincraft web allows non-developers to create assets on a dashboard, simply
 
 <img src="https://github.com/acgodson/chaincraft/blob/main/chaincraft-web/screenshots/con.gif" width="320" height="180">
 
-[See instructions for Web]()
+[See instructions for Web](https://github.com/acgodson/chaincraft/tree/main/chaincraft-web)
 
 ## Support for ARC3 and ARC69
 

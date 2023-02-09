@@ -26,7 +26,7 @@ To install chaincraft CLI, follow these steps:
 git clone https://github.com/acgodson/chaincraft.git
 
 ## Navigate to bin directory
-cd chaincraft/chaincraft-cli
+cd chaincraft/chaincraft-CLI
 
 ##Install Globally
 npm install -g .
@@ -91,3 +91,6 @@ chaincraft create-asset --type "pure nft" --name "bluesky" --description "my alb
 # Preview NFT
 
 ```
+
+![log1](./chaincraft-CLI/screenshots/log1.png)
+![log2](./chaincraft-CLI/screenshots/log2.png)
