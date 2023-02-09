@@ -14,86 +14,76 @@ yargs(hideBin(process.argv))
   .command({
     command: "create-asset",
     describe: "Create new Asset on Algorand Blockchain",
-    builder: (yargs) => {
-      return yargs.options({
+    builder: (yargs) =>
+      yargs.options({
         type: {
-          alias: "type",
+          alias: "t",
           describe: "Option to create either a pure or fractional nft",
           demandOption: true,
           type: "string",
           choices: ["pure nft", "fractional"],
         },
         name: {
-          alias: "name",
+          alias: "n",
           describe: "Used to derieve asset and unit name for NFT Asset",
           demandOption: true,
           type: "string",
         },
         description: {
-          alias: "description",
+          alias: "d",
           describe: "Description for NFT metadata",
           demandOption: false,
           type: "string",
         },
         manager: {
-          alias: "manager",
+          alias: "m",
           describe: "Add manager address, supports arc69 standard too",
           demandOption: false,
           type: "string",
         },
         freezer: {
-          alias: "freezer",
+          alias: "f",
           describe: "Can freeze and unfreeze assets",
           demandOption: false,
           type: "string",
         },
-      });
-    },
+      }),
     handler: (argv) => {
-      //Create Pure NFT
+      const name = argv.name.toUpperCase();
+      const note = argv.description || "";
+      const manager = argv.manager || "";
+      const freezer = argv.freezer || "";
+      let arc = {
+        asset: {
+          defaultFrozen: false,
+          unitName: name,
+          assetName: manager
+            ? `${name.toLowerCase()}@arc69`
+            : `${name.toLowerCase()}@arc3`,
+          url: "",
+          manager,
+          freezer,
+          metadata: "",
+          imageIntegrity: "",
+        },
+        description: note,
+        creator: null,
+        total: 1,
+        decimals: 0,
+      };
+
       if (argv.type === "pure nft") {
-        function initPureNFT(arc) {
-          CreateFolder("images/");
-          fs.writeFileSync("arc.json", JSON.stringify(arc), "utf-8");
-          CreateAsset();
-        }
-
-        const name = argv.name.toUpperCase();
-        const note = argv.description ? argv.description : "";
-        const arc = {
-          asset: {
-            defaultFrozen: false,
-            unitName: name,
-            assetName: argv.manager
-              ? `${name.toLowerCase()}@arc69`
-              : `${name.toLowerCase()}@arc3`,
-            url: "",
-            manager: argv.manager ? argv.manager : "",
-            freezer: argv.freezer ? argv.freezer : "",
-            metadata: "",
-            imageIntegrity: "",
-          },
-          description: note,
-          creator: null,
-          total: 1,
-          decimals: 0,
-        };
-
-        if (argv.manager && argv.manager.length > 0) {
-          switch (isValidAlgoAddress(argv.manager)) {
-            case true:
-              initPureNFT(arc);
-              break;
-            case false:
-              console.error("Invalid manager addr format");
-              return;
-            default:
-              console.error("Error checking manager");
-              return;
+        console.log("pure nft");
+        if (manager) {
+          if (!isValidAlgoAddress(manager)) {
+            console.error("Invalid manager address format");
+            return;
           }
-        } else {
-          initPureNFT(arc);
         }
+        CreateFolder("images/");
+        fs.writeFileSync("arc.json", JSON.stringify(arc), "utf-8");
+        CreateAsset();
+        return;
       }
 
       //Create fractional NFT
@@ -164,6 +154,7 @@ yargs(hideBin(process.argv))
       }
     },
   })
+
   .command({
     command: "destroy-asset",
     describe: "Destroy Asset on Algorand Blockchain",
