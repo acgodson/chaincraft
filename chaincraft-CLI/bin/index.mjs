@@ -73,7 +73,6 @@ yargs(hideBin(process.argv))
       };
 
       if (argv.type === "pure nft") {
-        console.log("pure nft");
         if (manager) {
           if (!isValidAlgoAddress(manager)) {
             console.error("Invalid manager address format");
@@ -161,7 +160,7 @@ yargs(hideBin(process.argv))
     builder: (yargs) => {
       return yargs.options({
         id: {
-          alias: "id",
+          alias: "i",
           describe: "asset id (asset-index of selected NFT)",
           demandOption: true,
           type: "string",

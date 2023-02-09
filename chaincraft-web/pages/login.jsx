@@ -82,32 +82,31 @@ const IndexPage = () => {
   const navigator = useRouter();
 
   async function handleLogin() {
-    if (provider)
-      try {
-        signInWithEmailAndPassword(auth, email, password)
-          .then(async (userCredential) => {
-            // User credential from custom Auth
-            const user = userCredential.user;
-            // Sign in web3auth
-            await loginWeb3(userCredential);
-            //Save Browser Cookie
-            const userData = await mapUserData(user);
-            setUserCookie(userData);
-            navigator.push('/');
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            toast({
-              title: 'Error',
-              description: error.message,
-              status: 'error',
-              duration: 9000,
-              isClosable: true,
-            });
+    try {
+      signInWithEmailAndPassword(auth, email, password)
+        .then(async (userCredential) => {
+          // User credential from custom Auth
+          const user = userCredential.user;
+          // Sign in web3auth
+          await loginWeb3(userCredential);
+          //Save Browser Cookie
+          const userData = await mapUserData(user);
+          setUserCookie(userData);
+          navigator.push('/');
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          toast({
+            title: 'Error',
+            description: error.message,
+            status: 'error',
+            duration: 9000,
+            isClosable: true,
           });
-      } catch (e) {
-        console.log(e);
-      }
+        });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   function handlSignUp() {
@@ -121,7 +120,7 @@ const IndexPage = () => {
       });
       return;
     }
-    if (provider) setFetching(true);
+    setFetching(true);
     try {
       createUserWithEmailAndPassword(auth, email, password)
         .then(async (userCredential) => {

@@ -41,7 +41,10 @@ async function printAsset(assetid) {
 }
 
 //Check asset holding
-async function checkAsset(assetid) {
+async function checkAsset(id) {
+  const assetid = parseInt(id);
+  console.log(assetid);
+
   fs.readFile("keyStore.json", async (err, data) => {
     let keyPair = JSON.parse(data);
     let accountInfo = await algodClient.accountInformation(keyPair.addr).do();
@@ -389,10 +392,9 @@ function createNFT() {
   });
 }
 
-async function destroyingAsset(assetID) {
+async function destroyingAsset(id) {
+  const assetID = parseInt(id);
   const destroyMessage = "Destroy Asset " + chalk.yellow(assetID);
-
-  const parm = await checkAsset(assetID);
 
   console.log(
     boxen(destroyMessage, {
@@ -401,10 +403,12 @@ async function destroyingAsset(assetID) {
       backgroundColor: "black",
     })
   );
+
   fs.readFile("keyStore.json", async (err, data) => {
     let keyPair = JSON.parse(data);
     const spinner = ora(chalk.gray("Waiting for Transaction")).start();
-    if (parm && parm.manager && parm.manager === keyPair.addr) {
+
+    try {
       const params = await algodClient.getTransactionParams().do();
       const addr = keyPair.addr;
       const txn = algosdk.makeAssetDestroyTxnWithSuggestedParamsFromObject({
@@ -425,11 +429,8 @@ async function destroyingAsset(assetID) {
       );
       spinner.succeed(chalk.gray("Asset destroyed"));
       console.log(confirmedTxn);
-    } else {
-      spinner.fail(
-        "Asset cannot be destroyed " +
-          chalk.gray("(managerAddr is undefined or does not match sender)")
-      );
+    } catch (e) {
+      spinner.fail(e.message);
     }
   });
 }

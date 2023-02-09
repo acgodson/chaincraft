@@ -39,8 +39,6 @@ npm install -g .
 
 ```
 
-unit and asset name is derieved from valuechoose to "pure nft" or "fractional"
-
 ## Options
 
 ```bash
@@ -55,6 +53,7 @@ unit and asset name is derieved from valuechoose to "pure nft" or "fractional"
   -d, --description  Description for NFT metadata                                        [string]
   -m, --manager      Address permitted to anage asset configuration                      [string]
   -f, --freezer      Address permitted freeze and unfreeze assets                        [string]
+  -i, -id            Asset id, required to modify, lookup or destroy asset               [string] [required]
 
 ```
 
