@@ -162,9 +162,15 @@ const GlobalProvider = (props: { children: any }) => {
     }
   };
 
-  const createAsset = async (arcData) => {
+  const createAsset = async (arcData: any) => {
     const rpc = new RPC(provider);
     const result = await rpc.createAsset(arcData);
+    return result;
+  };
+
+  const destroyAsset = async (assetID: string) => {
+    const rpc = new RPC(provider);
+    const result = await rpc.destroyAsset(assetID);
     return result;
   };
 
@@ -251,7 +257,7 @@ const GlobalProvider = (props: { children: any }) => {
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (!authUser) {
-        router.push('/');
+        router.push('/login');
       }
     });
   }, []);
@@ -303,9 +309,11 @@ const GlobalProvider = (props: { children: any }) => {
         web3Logout,
         account,
         balance,
+        destroyAsset,
         fetchBalance,
         createAsset,
         findAccountsAsset,
+        provider
       }}
     >
       {props.children}

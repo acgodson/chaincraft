@@ -8,7 +8,7 @@ class Doc extends Document {
       <Html lang='en'>
         <Head />
         <body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <ColorModeScript initialColorMode={"dark"} />
           <Main />
           <NextScript />
         </body>

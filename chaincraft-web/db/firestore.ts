@@ -29,7 +29,7 @@ type UserType = {
   uid: string;
 };
 
-export const createUser = (email: string, country: string, userId: string) => {
+export const createUser = (email: string, userId: string) => {
   const usersColRef = doc(db, 'users', userId);
   return setDoc(usersColRef, {
     uid: userId,

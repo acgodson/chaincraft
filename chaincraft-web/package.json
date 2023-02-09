@@ -10,7 +10,6 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/josefin-sans": "^4.5.1",
-    "@pinata/sdk": "^2.1.0",
     "@web3auth/base": "^4.4.0",
     "@web3auth/core": "^4.4.0",
     "@web3auth/openlogin-adapter": "^4.4.2",

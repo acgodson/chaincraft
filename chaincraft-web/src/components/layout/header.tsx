@@ -1,7 +1,13 @@
 import ThemeButton from '@/components/theme-button';
-import { HStack } from '@chakra-ui/react';
+import { HStack, Button } from '@chakra-ui/react';
+import { GlobalContext } from 'contexts/global';
+import { useContext } from 'react';
 
 const Header = () => {
+
+  const { provider }: any =
+    useContext(GlobalContext);
+
   return (
     <HStack
       as='header'
@@ -15,6 +21,14 @@ const Header = () => {
     >
       <ThemeButton />
       {/* <LanguagesButton /> */}
+
+      <Button disabled={true}
+        _hover={{
+          backgroundColor: null
+        }}
+      >
+        {!provider ? "No Network" : "Testnet"}
+      </Button>
     </HStack>
   );
 };

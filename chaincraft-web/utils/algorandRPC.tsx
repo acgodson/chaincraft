@@ -125,6 +125,27 @@ export default class AlgorandRPC {
     }
   };
 
+
+  checkAsset = async (
+    assetid: number
+  ): Promise<any> => {
+
+    const keyPair = await this.getAlgorandKeyPair();
+    const client = await this.makeClient();
+    let accountInfo = await client.accountInformation(keyPair.addr).do();
+    let idx: number;
+    for (idx = 0; idx < accountInfo["created-assets"].length; idx++) {
+      let scrutinizedAsset = accountInfo["created-assets"][idx];
+      if (scrutinizedAsset["index"] == assetid) {
+        let myparms = JSON.stringify(scrutinizedAsset["params"], undefined, 2);
+        return myparms;
+      }
+    }
+
+
+
+  };
+
   printAssetHolding = async (
     account: string,
     assetid: number
@@ -198,6 +219,42 @@ export default class AlgorandRPC {
 
     const result = await this.printCreatedAsset(keyPair.addr, assetID);
     return result;
+  };
+
+
+
+
+  destroyAsset = async (assetID: string): Promise<any> => {
+    const keyPair = await this.getAlgorandKeyPair();
+    const client = await this.makeClient();
+    const params = await client.getTransactionParams().do();
+    const note = undefined;
+    const id = parseInt(assetID)
+    const parm = await this.checkAsset(id);
+    if (parm && parm.manager && parm.manager === keyPair.addr) {
+      const params = await client.getTransactionParams().do();
+      const addr = keyPair.addr;
+      const txn = algosdk.makeAssetDestroyTxnWithSuggestedParamsFromObject({
+        from: addr,
+        note: undefined,
+        assetIndex: id,
+        suggestedParams: params,
+      });
+      const rawSignedTxn = txn.signTxn(keyPair.sk);
+      const tx = await client.sendRawTransaction(rawSignedTxn).do();
+      // Wait for confirmation
+      const confirmedTxn = await algosdk.waitForConfirmation(
+        client,
+        tx.txId,
+        4
+      );
+      console.log(confirmedTxn);
+
+      return confirmedTxn;
+    }
+
+
+
   };
 
   findAssetsOnAccount = async (address: string): Promise<any> => {

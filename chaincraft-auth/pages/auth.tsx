@@ -53,7 +53,9 @@ const LoginPage = () => {
             Don&apos;t have a chaincraft account?{' '}
             <span>
               <a
-                href="#"
+                href="https://asset-chaincraft-algo.web.app"
+                target="_blank"
+                rel="noreferrer"
                 style={{
                   color: 'purple',
                 }}
@@ -156,7 +158,6 @@ const LoginPage = () => {
             id="submit"
             className="authorize"
             value="Authorize"
-            //onClick={}
           />
         </VStack>
       )}
