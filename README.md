@@ -3,7 +3,7 @@
 # Chaincraft: Empowering Creators in the NFT World
 
 - 👉 [Watch Demo](https://youtu.be/i2E8fnoTjg8)
-- 👉 [Read Article on Medium]()
+- 👉 [NPM Package](https://www.npmjs.com/package/chaincraft?activeTab=readme)
 
 The Chaincraft project was created for the Greenhouse Hackathon 3 **with the goal of making it easier for new developers and non-developers** to interact with Non-Fungible Tokens (NFTs).
 
@@ -40,7 +40,7 @@ Please note that the first version of Chaincraft is built to support media or NF
 
 ### Links
 
-- [Medium]()
+- [NPM Package](https://www.npmjs.com/package/chaincraft?activeTab=readme)
 - [Website](https://asset-chaincraft-algo.web.app)
 - [Youtube](https://youtu.be/i2E8fnoTjg8)
 

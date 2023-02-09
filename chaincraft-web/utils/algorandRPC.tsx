@@ -38,6 +38,14 @@ export default class AlgorandRPC {
     return balance.amount;
   };
 
+  getAssets = async (): Promise<any> => {
+    const keyPair = await this.getAlgorandKeyPair();
+    const client = await this.makeClient();
+    const acc = await client.accountInformation(keyPair.addr).do();
+    console.log(acc.assets);
+    return acc.assets;
+  };
+
   makeClient = async (): Promise<any> => {
     const algodToken = {
       'x-api-key': ALGO_API_KEY,
@@ -225,6 +233,8 @@ export default class AlgorandRPC {
 
 
   destroyAsset = async (assetID: string): Promise<any> => {
+
+
     const keyPair = await this.getAlgorandKeyPair();
     const client = await this.makeClient();
     const params = await client.getTransactionParams().do();

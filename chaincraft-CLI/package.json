@@ -1,6 +1,6 @@
 {
   "name": "chaincraft",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Build a cli with nodejs",
   "main": "index.js",
   "bin": {
@@ -28,8 +28,6 @@
     "url": "^0.11.0",
     "web3": "^1.8.2",
     "yargs": "^17.6.2"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
+ 
 }

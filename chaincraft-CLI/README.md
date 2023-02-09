@@ -18,17 +18,21 @@ npm version 8 or later
 
 ## Installation
 
-To install chaincraft CLI, follow these steps:
+To install chaincraft CLI, Use:
 
-- Install Node.js and clone this repository
+```bash
+npm i chaincraft
+```
+
+Or Clone GitHub Repository
 
 ```bash
 git clone https://github.com/acgodson/chaincraft.git
 
-## Navigate to bin directory
+#  Navigate to bin directory
 cd chaincraft/chaincraft-CLI
 
-##Install Globally
+# Install globally to test from anywhere
 npm install -g .
 ```
 
@@ -115,13 +119,13 @@ chaincraft destroy-asset 157787208
 # ...
 
 # txn: {
-#     caid: 157787208, 
-#     fee: 1000, 
-#     fv: 27611287, 
-#     gen: 'testnet-v1.0' 
-#     gh: [Uint8Array], 
-#     1v: 27612287, 
-#     snd: [Uint8Array], 
+#     caid: 157787208,
+#     fee: 1000,
+#     fv: 27611287,
+#     gen: 'testnet-v1.0'
+#     gh: [Uint8Array],
+#     1v: 27612287,
+#     snd: [Uint8Array],
 #     type: 'acfg'
 
 ```

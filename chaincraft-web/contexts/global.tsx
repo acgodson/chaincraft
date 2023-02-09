@@ -11,6 +11,7 @@ import {
 import { OpenloginAdapter } from '@web3auth/openlogin-adapter';
 import RPC from '../utils/algorandRPC';
 import { useRouter } from 'next/router';
+import { AnyCnameRecord } from 'dns';
 
 export interface AuthContext {
   values: {};
@@ -35,6 +36,8 @@ const GlobalProvider = (props: { children: any }) => {
   const [account, setAccount] = useState<any | null>(null);
   const [keyPairs, setKeyPairs] = useState<any | null>(null);
   const [balance, setBalance] = useState<any | null>(null);
+  const [asset, setAsset] = useState<null | any>(null)
+  const [infos, setInfos] = useState([]);
 
   const getUserFromCookie = () => {
     const cookie = cookies.get('auth');
@@ -112,7 +115,7 @@ const GlobalProvider = (props: { children: any }) => {
     return auth
       .signOut()
       .then(() => {
-        router.push('/');
+        router.push('/login');
       })
       .catch((e: any) => {
         console.error(e);
@@ -144,6 +147,18 @@ const GlobalProvider = (props: { children: any }) => {
     }
   };
 
+  const getAssets = async () => {
+    if (!provider) {
+      console.log('provider not initialized yet');
+      return;
+    }
+    const rpc = new RPC(provider);
+    const xx = await rpc.getAssets();
+    if (xx) {
+      setAsset(xx);
+    }
+  };
+
   const fetchBalance = async () => {
     try {
       const rpc = new RPC(provider);
@@ -161,6 +176,7 @@ const GlobalProvider = (props: { children: any }) => {
       console.log(e);
     }
   };
+
 
   const createAsset = async (arcData: any) => {
     const rpc = new RPC(provider);
@@ -277,6 +293,13 @@ const GlobalProvider = (props: { children: any }) => {
     }
   });
 
+  ///Fetch Account
+  useEffect(() => {
+    if (!asset) {
+      getAssets();
+    }
+  });
+
   // Fetch KeyPairs
   useEffect(() => {
     if (!keyPairs) {
@@ -292,6 +315,52 @@ const GlobalProvider = (props: { children: any }) => {
       }
     }
   });
+
+  // async function lookupAsset() {
+  //   if (!provider) {
+  //     console.log('provider not initialized yet');
+  //     return;
+  //   }
+  //   const results = [];
+
+  //   for (let i = 0; i < asset.length; i++) {
+  //     const assetId = asset[i];
+  //     const rpc = new RPC(provider);
+  //     const info = await rpc.checkAsset(assetId["asset-id"]);
+  //     if (info) {
+  //       // const info = JSON.parse(x)
+  //       console.log(info)
+  //       results.push({
+  //         assetName: info.name,
+  //         unitName: info["unit-name"],
+  //         total: info.total,
+  //         url: info.url,
+  //         decimals: info.decimals,
+  //       });
+
+  //     }
+
+  //   }
+
+  //   setInfos(results);
+
+
+  // }
+
+
+  // //Fetch ccount Balance
+  // useEffect(() => {
+  //   if (asset && infos.length < asset.length) {
+  //     lookupAsset();
+
+  //   }
+  // });
+
+
+  useEffect(() => {
+    console.log(infos);
+  }, [infos])
+
 
   return (
     <GlobalContext.Provider
@@ -313,7 +382,9 @@ const GlobalProvider = (props: { children: any }) => {
         fetchBalance,
         createAsset,
         findAccountsAsset,
-        provider
+        provider,
+        asset
+
       }}
     >
       {props.children}
