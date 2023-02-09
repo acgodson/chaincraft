@@ -39,16 +39,22 @@ npm install -g .
 
 ```
 
+unit and asset name is derieved from valuechoose to "pure nft" or "fractional"
+
 ## Options
 
 ```bash
---version             output the version number
---help                output usage information
---type                choose between "pure nft" or "fractional"
---name                unit and asset name is derieved from value
---description         description of file
---manager             address of asset manager
---id                  asset-id
+      --help         Show help                                                           [boolean]
+      --version      Show version number                                                 [boolean]
+  -t, --type         choose to "pure nft" or "fractional"
+                         [string] [required] [choices: "pure nft", "fractional"]
+
+  -n, --name         Used to derieve asset and unit name for NFT Asset                   [string] [required]
+                                                             
+
+  -d, --description  Description for NFT metadata                                        [string]
+  -m, --manager      Address permitted to anage asset configuration                      [string]
+  -f, --freezer       Address permitted freeze and unfreeze assets                       [string]
 
 ```
 
