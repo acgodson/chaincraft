@@ -149,9 +149,6 @@ export default class AlgorandRPC {
         return myparms;
       }
     }
-
-
-
   };
 
   printAssetHolding = async (
@@ -228,9 +225,6 @@ export default class AlgorandRPC {
     const result = await this.printCreatedAsset(keyPair.addr, assetID);
     return result;
   };
-
-
-
 
   destroyAsset = async (assetID: string): Promise<any> => {
 

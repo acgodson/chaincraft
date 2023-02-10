@@ -41,7 +41,7 @@ const GlobalProvider = (props: { children: any }) => {
           extraLoginOptions: {
             id_token: idToken,
             verifierIdField: 'sub',
-            domain: 'http://localhost:3000',
+            domain: 'http://chaincraft-algo.web.app/',
           },
         }
       );

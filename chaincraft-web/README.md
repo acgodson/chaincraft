@@ -42,6 +42,9 @@ If you're interested in contributing to Chaincraft Web, feel free to fork the re
 
 ## Links
 
-- [Medium]()
 - [Website](https://asset-chaincraft-algo.web.app)
 - [Youtube](https://youtu.be/i2E8fnoTjg8)
+
+![log1](https://github.com/acgodson/chaincraft/blob/main/chaincraft-web/screenshots/tit1.png)
+![log2](https://github.com/acgodson/chaincraft/blob/main/chaincraft-web/screenshots/tit2.png)
+![log3](https://github.com/acgodson/chaincraft/blob/main/chaincraft-web/screenshots/tt3.png)

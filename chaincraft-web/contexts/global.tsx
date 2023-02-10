@@ -38,6 +38,9 @@ const GlobalProvider = (props: { children: any }) => {
   const [balance, setBalance] = useState<any | null>(null);
   const [asset, setAsset] = useState<null | any>(null)
   const [infos, setInfos] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [assetLoading, setAssetLoading] = useState(false)
+  const [ImageURL, setImageURL] = useState(null);
 
   const getUserFromCookie = () => {
     const cookie = cookies.get('auth');
@@ -83,7 +86,7 @@ const GlobalProvider = (props: { children: any }) => {
         extraLoginOptions: {
           id_token: idToken,
           verifierIdField: 'sub',
-          domain: 'http://localhost:3000',
+          domain: 'https://asset-chaincraft-algo.web.app/',
         },
       }
     );
@@ -152,10 +155,27 @@ const GlobalProvider = (props: { children: any }) => {
       console.log('provider not initialized yet');
       return;
     }
+    setLoading(true)
     const rpc = new RPC(provider);
     const xx = await rpc.getAssets();
     if (xx) {
       setAsset(xx);
+      setLoading(false)
+    }
+  };
+  const checkAssetInfo = async (id: number) => {
+    if (!provider) {
+      console.log('provider not initialized yet');
+      return;
+    }
+    setAssetLoading(true)
+    const rpc = new RPC(provider);
+    const xx = await rpc.checkAsset(id);
+    if (xx) {
+      const image = xx.image.slice(7);
+      console.log(xx)
+      setImageURL(image);
+      setAssetLoading(false)
     }
   };
 
@@ -316,45 +336,6 @@ const GlobalProvider = (props: { children: any }) => {
     }
   });
 
-  // async function lookupAsset() {
-  //   if (!provider) {
-  //     console.log('provider not initialized yet');
-  //     return;
-  //   }
-  //   const results = [];
-
-  //   for (let i = 0; i < asset.length; i++) {
-  //     const assetId = asset[i];
-  //     const rpc = new RPC(provider);
-  //     const info = await rpc.checkAsset(assetId["asset-id"]);
-  //     if (info) {
-  //       // const info = JSON.parse(x)
-  //       console.log(info)
-  //       results.push({
-  //         assetName: info.name,
-  //         unitName: info["unit-name"],
-  //         total: info.total,
-  //         url: info.url,
-  //         decimals: info.decimals,
-  //       });
-
-  //     }
-
-  //   }
-
-  //   setInfos(results);
-
-
-  // }
-
-
-  // //Fetch ccount Balance
-  // useEffect(() => {
-  //   if (asset && infos.length < asset.length) {
-  //     lookupAsset();
-
-  //   }
-  // });
 
 
   useEffect(() => {
@@ -383,7 +364,14 @@ const GlobalProvider = (props: { children: any }) => {
         createAsset,
         findAccountsAsset,
         provider,
-        asset
+        asset,
+        getAssets,
+        loading,
+        assetLoading,
+        setAssetLoading,
+        ImageURL,
+        setImageURL,
+        checkAssetInfo
 
       }}
     >
